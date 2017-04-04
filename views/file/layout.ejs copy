@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+	<%
+	for(var i=0; i < data.Tablix1.Details_Collection.Details.length - 1; i++) {
+
+                const Sample_No = data.Tablix1.Details_Collection.Details[i].Sample_No;
+                const Sample_Collection_Date = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Sample_Collection_Date;
+                const SurveyNo = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.SurveyNo;
+                const DragNO = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.DragNO;
+                const Land_Area = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Land_Area;
+                const Irrigation_Rainfed = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Irrigation_Rainfed;
+                const lat = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Textbox64.split("లాంగిట్యూడ్")[0].replace("లాటిట్యూడ్","");
+                const lng = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Textbox64.split("లాంగిట్యూడ్")[1];
+                const Farmer_Name = data.Tablix1.Details_Collection.Details[i].Farmer_Name;
+                const Father_Name = data.Tablix1.Details_Collection.Details[i].Father_Name;
+                const Address = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Address;
+                const Sub_District_Name = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Sub_District_Name;
+                const District_Name = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.District_Name;
+                const mobile = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.mobile;
+                const Aadhaar_Number = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Aadhaar_Number;
+                const validity = data.Tablix1.Details_Collection.Details[i].Textbox111;
+                const pincode = '';
+                const nature_of_land = '';
+
+								const {Textbox2, TestName, Suggestion_Thro_Soil, Suggestion_Thro_Leaf} =
+											!data.Tablix1.Details_Collection.Details[i].Subreport1569.Report.Tablix1.Details_Collection
+												? {Textbox2:'',TestName:'',Suggestion_Thro_Soil:'',Suggestion_Thro_Leaf:''}
+												: data.Tablix1.Details_Collection.Details[i].Subreport1569.Report.Tablix1.Details_Collection.Details[0] || data.Tablix1.Details_Collection.Details[i].Subreport1569.Report.Tablix1.Details_Collection.Details
+
+
+								const Lab_Name2 = data.Tablix31.Details3_Collection.Details3[i].Lab_Name2;
+								var test_reports = {};
+								for(var __i = 0; __i< data.Tablix31.Details3_Collection.Details3[i].SHCSubReSoilTestResultBlk.Report.Tablix2.Details1_Collection.Details1.length;__i++){
+								test_reports[data.Tablix31.Details3_Collection.Details3[i].SHCSubReSoilTestResultBlk.Report.Tablix2.Details1_Collection.Details1[__i].TestName2.trim()] =
+									 data.Tablix31.Details3_Collection.Details3[i].SHCSubReSoilTestResultBlk.Report.Tablix2.Details1_Collection.Details1[__i];
+								}
+
+								var fert_suggestions = [];
+								fert_suggestions = [{
+									Sno: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Textbox1,
+									CropNVarient: `${data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Crop_Name1}, ${data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Variety_Name}`,
+									Reference_Yield: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Reference_Yield,
+									Organic_Fertilizer_Name: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Organic_Fertilizer_Name,
+									Bio_Fertilizer_Name: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Bio_Fertilizer_Name,
+									Comb1_Fert1_name: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb1_Fert1_Mod_dose,
+									Comb1_Fert1_dose: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb1_Fert1_Mod_dose,
+									Comb1_Fert2_name: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb1_Fert1_Mod_dose,
+									Comb1_Fert2_dose: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb1_Fert2_Mod_dose,
+									Comb1_Fert3_name: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb1_Fert1_Mod_dose,
+									Comb1_Fert3_dose: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb1_Fert3_Mod_dose,
+									Comb2_Fert1_name: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb1_Fert1_Mod_dose,
+									Comb2_Fert1_dose: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb2_Fert2_Mod_dose,
+									Comb2_Fert2_name: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb1_Fert1_Mod_dose,
+									Comb2_Fert2_dose: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb2_Fert1_Mod_dose,
+									Comb2_Fert3_name: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb1_Fert1_Mod_dose,
+									Comb2_Fert3_dose: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb2_Fert3_Mod_dose
+
+								}];
+   %>
+	<div style="top: <%= i*794 %>px;left: 0px;" class="page">
+
+				<!-- Section 1 -->
+        <input type="text" value="<%= Sample_No %>" placeholder="Soil test Number" style="left: 140px;top: 178px;width: 183px;height: 16px;" class="stno field">
+        <input type="text" value="<%= Farmer_Name %>" placeholder="Farmer Name" style="left: 72px;top: 203px;width: 252px;height: 16px;" class="stno field">
+        <input type="text" value="<%= Father_Name %>" placeholder="Father Name" style="left: 72px;top: 224px;width: 252px;height: 16px;" class="Father field">
+        <input type="text" value="<%= validity %>" placeholder="Validity" style="left: 72px;top: 244px;width: 252px;height: 16px;" class="Validity field">
+
+				<!-- Section 2 -->
+        <input type="text" value="<%= Sample_No %>" placeholder="sno" style="left: 140px;top: 294px;width: 173px;height: 16px;" class="sno field">
+        <input type="text" value="<%= Sample_Collection_Date %>" placeholder="date" style="left: 165px;top: 318px;width: 169px;height: 16px;" class="sampledate field">
+        <input type="text" value="<%= SurveyNo %>" placeholder="survey no" style="left: 84px;top: 340px;width: 243px;height: 17px;" class="field surveyno">
+        <input type="text" value="<%= DragNO %>" placeholder="Khapra No." style="left: 148px;top: 364px;width: 175px;height: 16px;" class="field khaprano">
+        <input type="text" value="<%= Land_Area %>" placeholder="In Acre's" style="left: 110px;top: 388px;width: 216px;height: 16px;" class="field dogno">
+        <input type="text" value="<%= Irrigation_Rainfed %>" placeholder="Water Supply" style="left: 110px;top: 410px;width: 217px;height: 16px;" class="field dogno">
+        <input type="text" value="<%= lat %>" placeholder="0.0000" style="left: 220px;top: 442px;width: 104px;height: 16px;" class="field geolat">
+        <input type="text" value="<%= lng %>" placeholder="0.0000" style="left: 220px;top: 465px;width: 104px;height: 17px;" class="field geolng">
+        <input type="text" value="<%= nature_of_land %>" placeholder="Nature of Land" style="left: 104px;top: 486px;width: 217px;height: 17px;" class="field typeofland">
+
+				<!-- Section 3 -->
+        <input type="text" value="<%= Textbox2 %>" placeholder="Bhusara" style="left: 6px;top: 611px;width: 20px;height: 16px;" class="sno1 field">
+        <input type="text" value="<%= TestName %>" placeholder="sno1" style="left: 40px;top: 611px;width: 110px;height: 16px;" class="Bhu field">
+        <input type="text" value="<%= Suggestion_Thro_Soil %>" placeholder="Keep in Earth" style="left: 164px;top: 611px;width: 65px;height: 16px;" class="Earth field">
+        <input type="text" value="<%= Suggestion_Thro_Leaf %>" placeholder="Pichikari" style="left: 244px;top: 611px;width: 65px;height: 16px;" class="Pichikari field">
+
+				<!-- Section 4 -->
+
+				<!-- Section 5 -->
+        <input type="text" value="<%= Sample_No %>" placeholder="Soil Sample Number" style="left: 496px;top: 180px;width: 168px;height: 16px;" class="ssno field">
+        <input type="text" value="<%= Farmer_Name %>" placeholder="Farmer Name" style="left: 406px;top: 200px;width: 258px;height: 16px;" class="Farmer field">
+        <input type="text" value="<%= Father_Name %>" placeholder="Father Name" style="left: 406px;top: 225px;width: 256px;height: 16px;" class="Father field">
+        <input type="text" value="<%= Address %>" placeholder="Village Name" style="left: 406px;top: 250px;width: 256px;height: 16px;" class="Village field">
+        <input type="text" value="<%= Sub_District_Name %>" placeholder="Mandal Name" style="left: 406px;top: 280px;width: 256px;height: 16px;" class="Mandal field">
+        <input type="text" value="<%= District_Name %>" placeholder="District Name" style="left: 387px;top: 308px;width: 256px;height: 16px;" class="District field">
+        <input type="text" value="<%= pincode %>" placeholder="Pincode" style="left: 387px;top: 332px;width: 256px;height: 16px;" class="Pin field">
+        <input type="text" value="<%= mobile %>" placeholder="Mobile" style="left: 424px;top: 364px;width: 240px;height: 16px;" class="Mobile field">
+        <input type="text" value="<%= Aadhaar_Number %>" placeholder="Aadhar" style="left: 424px;top: 390px;width: 240px;height: 16px;" class="Aadhar field">
+        <input type="text" value="<%= validity %>" placeholder="Validity" style="left: 406px;top: 420px;width: 240px;height: 16px;" class="Validity field">
+
+				<!-- Section 6 -->
+        <input type="text" value="<%= test_reports['ఉదజని సూచిక'].TestValue1 %>" placeholder="PH" style="left: 840px;top: 222px;width: 54px;height: 16px;" class="PH field">
+        <input type="text" value="<%= test_reports['ఉదజని సూచిక'].Rating %>" placeholder="PH Rating" style="left: 970px;top: 222px;width: 54px;height: 16px;" class="PHRating field">
+        <input type="text" value="<%= test_reports['లవణ సూచిక'].TestValue1 %>" placeholder="EC" style="left: 840px;top: 240px;width: 54px;height: 16px;" class="EC field">
+        <input type="text" value="<%= test_reports['లవణ సూచిక'].Rating %>" placeholder="EC Rating" style="left: 970px;top: 240px;width: 54px;height: 16px;" class="ECRating field">
+        <input type="text" value="<%= test_reports['సేంద్రియ కర్బనం'].TestValue1 %>" placeholder="OC" style="left: 840px;top: 261px;width: 54px;height: 16px;" class="OC field">
+        <input type="text" value="<%= test_reports['సేంద్రియ కర్బనం'].Rating %>" placeholder="OC Rating" style="left: 970px;top: 261px;width: 54px;height: 16px;" class="OCRating field">
+        <input type="text" value="<%= test_reports['లభ్య  నత్రజని'].TestValue1 %>" placeholder="N" style="left: 840px;top: 276px;width: 54px;height: 16px;" class="N field">
+        <input type="text" value="<%= test_reports['లభ్య  నత్రజని'].Rating %>" placeholder="N Rating" style="left: 970px;top: 276px;width: 54px;height: 16px;" class="NRating field">
+        <input type="text" value="<%= test_reports['లభ్య  భాస్వరం'].TestValue1 %>" placeholder="P" style="left: 840px;top: 293px;width: 54px;height: 16px;" class="P field">
+        <input type="text" value="<%= test_reports['లభ్య  భాస్వరం'].Rating %>" placeholder="P Rating" style="left: 970px;top: 293px;width: 54px;height: 16px;" class="PRating field">
+        <input type="text" value="<%= test_reports['లభ్య  పొటాషియం'].TestValue1 %>" placeholder="K" style="left: 840px;top: 310px;width: 54px;height: 16px;" class="K field">
+        <input type="text" value="<%= test_reports['లభ్య  పొటాషియం'].Rating %>" placeholder="K Rating" style="left: 970px;top: 310px;width: 54px;height: 16px;" class="KRating field">
+        <input type="text" value="<%= test_reports['లభ్య  గంధకము'].TestValue1 %>" placeholder="S" style="left: 840px;top: 328px;width: 54px;height: 16px;" class="S field">
+        <input type="text" value="<%= test_reports['లభ్య  గంధకము'].Rating %>" placeholder="S Rating" style="left: 970px;top: 328px;width: 54px;height: 16px;" class="SRating field">
+        <input type="text" value="<%= test_reports['లభ్య  జింకు'].TestValue1 %>" placeholder="ZN" style="left: 840px;top: 347px;width: 54px;height: 16px;" class="ZN field">
+        <input type="text" value="<%= test_reports['లభ్య  జింకు'].Rating %>" placeholder="ZN Rating" style="left: 970px;top: 347px;width: 54px;height: 16px;" class="ZNRating field">
+        <input type="text" value="<%= test_reports['లభ్య  బోరాన్'].TestValue1 %>" placeholder="B" style="left: 840px;top: 366px;width: 54px;height: 16px;" class="B field">
+        <input type="text" value="<%= test_reports['లభ్య  బోరాన్'].Rating %>" placeholder="B Rating" style="left: 970px;top: 366px;width: 54px;height: 16px;" class="BRating field">
+        <input type="text" value="<%= test_reports['లభ్య  ఇనుము'].TestValue1 %>" placeholder="FE" style="left: 840px;top: 386px;width: 54px;height: 16px;" class="FE field">
+        <input type="text" value="<%= test_reports['లభ్య  ఇనుము'].Rating %>" placeholder="FE Rating" style="left: 970px;top: 386px;width: 54px;height: 16px;" class="FERating field">
+        <input type="text" value="<%= test_reports['లభ్య  మాంగనీసు'].TestValue1 %>" placeholder="MN" style="left: 840px;top: 406px;width: 54px;height: 16px;" class="MN field">
+        <input type="text" value="<%= test_reports['లభ్య  మాంగనీసు'].Rating %>" placeholder="MN Rating" style="left: 970px;top: 406px;width: 54px;height: 16px;" class="MNRating field">
+        <input type="text" value="<%= test_reports['లభ్య  రాగి'].TestValue1 %>" placeholder="CU" style="left: 840px;top: 424px;width: 54px;height: 16px;" class="CU field">
+        <input type="text" value="<%= test_reports['లభ్య  రాగి'].Rating %>" placeholder="CU Rating" style="left: 970px;top: 424px;width: 54px;height: 16px;" class="CURating field">
+
+				<!-- Section 7 -->
+				<% fert_suggestions.forEach((suggestion) => {%>
+						<input type="text" value="<%=  suggestion.Sno %>" placeholder="sno2" style="left: 336px;top: 537px;width: 23px;height: 16px;" class="sno2 field">
+						<!-- textarea style="resize: none;overflow: hidden;min-height: 34px;max-height: 100px;left: 378px;top: 536px;width: 106px;" class="CropVariety1 field"><%=  suggestion.CropNVarient %></textarea -->
+						<p style="left: 378px;top: 536px;width: 106px;" class="CropVariety1 field"><%=  suggestion.CropNVarient %></p>
+						<!-- input type="text" value="<%=  suggestion.Reference_Yield %>" placeholder="Yeild1" style="left: 492px;top: 536px;width: 63px;height: 16px;" class="Yeild1 field" -->
+						<p style="left: 492px;top: 536px;width: 63px;" class="Yeild1 field"><%=  suggestion.Reference_Yield %></p>
+						<!-- input type="text" value="<%=  suggestion.Organic_Fertilizer_Name %>" placeholder="Organic Quantity1" style="left: 566px;top: 536px;width: 63px;height: 16px;" class="Orgqc1 field" -->
+						<p style="left: 566px;top: 536px;width: 63px;" class="Orgqc1 field"><%=  suggestion.Organic_Fertilizer_Name %></p>
+						<!-- input type="text" value="<%=  suggestion.Bio_Fertilizer_Name %>" placeholder="Bio Quantity1" style="left: 644px;top: 536px;width: 63px;height: 16px;" class="Bio1 field" -->
+						<p style="left: 644px;top: 536px;width: 63px;" class="Bio1 field"><%=  suggestion.Bio_Fertilizer_Name %></p>
+						<!-- input type="text" value="<%=  suggestion.Sno %>" placeholder="Urea1" style="left: 730px;top: 536px;width: 48px;height: 16px;" class="Urea1 field" -->
+						<p style="left: 730px;top: 536px;width: 48px;" class="Urea1 field"><%=  suggestion.Comb1_Fert1 %></p>
+						<!-- input type="text" value="<%=  suggestion.Sno %>" placeholder="Phosphate1" style="left: 790px;top: 536px;width: 51px;height: 16px;" class="Phosphate1 field" -->
+						<p style="left: 790px;top: 536px;width: 51px;" class="Phosphate1 field"><%=  suggestion.Comb1_Fert2 %></p>
+						<!-- input type="text" value="<%=  suggestion.Sno %>" placeholder="Chloride1" style="left: 852px;top: 536px;width: 51px;height: 16px;" class="Chloride1 field" -->
+						<p style="left: 852px;top: 536px;width: 51px;" class="Chloride1 field"><%=  suggestion.Comb1_Fert3 %></p>
+						<!-- input type="text" value="<%=  suggestion.Sno %>" placeholder="Urea12" style="left: 914px;top: 536px;width: 46px;height: 16px;" class="Urea12 field" -->
+						<p style="left: 914px;top: 536px;width: 46px;" class="Urea12 field"><%=  suggestion.Comb2_Fert1 %></p>
+						<!-- input type="text" value="<%=  suggestion.Sno %>" placeholder="Phosphate12" style="left: 974px;top: 536px;width: 51px;height: 16px;" class="Phosphate12 field" -->
+						<p style="left: 974px;top: 536px;width: 51px;" class="Phosphate12 field"><%=  suggestion.Comb2_Fert2 %></p>
+						<!-- input type="text" value="<%=  suggestion.Sno %>" placeholder="Chloride12" style="left: 1030px;top: 536px;width: 51px;height: 16px;" class="Chloride12 field" -->
+						<p style="left: 1030px;top: 536px;width: 51px;" class="Chloride12 field" ><%=  suggestion.Comb2_Fert3 %></p>
+				<% }) %>
+
+    </div>
+	<% } %>
+</body>
+
+</html>

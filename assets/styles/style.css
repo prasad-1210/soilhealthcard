@@ -1,0 +1,30 @@
+@page{
+    size: auto;   /* auto is the initial value */
+    margin: 0mm;  /* this affects the margin in the printer settings */
+}
+textarea.field, input.field, p.field {
+    position: absolute;
+    border: 0 none transparent;
+    background-color: transparent;
+    resize: none;
+}
+p.field{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    text-align: left;
+    font-size: 12px;
+    word-break: break-word;
+}
+
+div.page {
+    height: 794px;
+    position: absolute;
+    background-image: url(../images/image.png);
+    outline: 0 none transparent;
+    background-size: contain;
+    width: 1086px;
+    -webkit-print-color-adjust: exact;
+   	background-repeat:no-repeat;
+}
