@@ -1,3 +1,15 @@
+@media print {
+  div.page {
+    background-image: none;
+  }
+}
+
+@media screen{
+  div.page {
+    background-image: url(../images/image.png);
+  }
+}
+
 @page{
     size: auto;   /* auto is the initial value */
     margin: 0mm;  /* this affects the margin in the printer settings */
@@ -18,10 +30,10 @@ p.field{
     word-break: break-word;
 }
 
+
 div.page {
     height: 794px;
     position: absolute;
-    background-image: url(../images/image.png);
     outline: 0 none transparent;
     background-size: contain;
     width: 1086px;
@@ -63,9 +75,6 @@ div.page {
 .mypage .color{
     color:#fff;
 }
-
-/*====== style for placeholder ========*/
-
 .form-control::-webkit-input-placeholder {
     color:lightgray;
     font-size:18px;
