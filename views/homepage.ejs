@@ -2,31 +2,31 @@
 <html>
   <head>
 	<link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
-  <body style="position: relative; margin:0px; padding: 0px;">
-	<!-- <div style="top: 0px;left: 0px;" class="page">
-	     <input type="text" placeholder="sno" style="left: 145px;top: 326px;width: 188px;height: 16px;" class="sno field">
-	     <input type="text" placeholder="date" style="left: 165px;top: 349px;width: 169px;height: 16px;" class="sampledate field">
-	     <input type="text" placeholder="survey no" style="left: 90px;top: 371px;width: 243px;height: 17px;" class="field surveyno">
-	     <input type="text" placeholder="Khapra No." style="left: 155px;top: 394px;width: 175px;height: 16px;" class="field khaprano">
-             <input type="text" placeholder="In Acre's" style="left: 115px;top: 415px;width: 216px;height: 16px;" class="field dogno">
-	     <input type="text" placeholder="Water Supply" style="left: 115px;top: 437px;width: 217px;height: 16px;" class="field dogno">
-	     <input type="text" placeholder="0.0000" style="left: 225px;top: 460px;width: 104px;height: 16px;" class="field geolat">
-      	     <input type="text" placeholder="0.0000" style="left: 225px;top: 478px;width: 104px;height: 17px;" class="field geolng">
-	     <input type="text" placeholder="Nature of Land" style="left: 110px;top: 505px;width: 217px;height: 17px;" class="field typeofland">
-	     <textarea style="left: 390px;top: 724px;width: 109px;height: 42px;overflow: visible;" class="field typeofcrop">Type of crop and type of crop</textarea>
-	     <textarea style="left: 505px;top: 723px;width: 71px;height: 58px;overflow: visible;" class="field typeofcrop">Type of crop and type of crop</textarea>
-	     <textarea style="left: 582px;top: 724px;width: 63px;height: 69px;overflow: visible;" class="field typeofcrop">Type of crop and type of crop</textarea>
-	</div>-->
-    	<div class="main container clearfix">
-                <form action="file/upload" method="post" enctype="multipart/form-data" style="text-align: center;">
-                    <label>Please Select A XML File:</label>
-                    <input type="file" name="avatar" />
-                    <br/>
-                    <br/>
-                    <input type="submit" valu="Upload"/>
-                </form>
+  <body>
+<div class="container mypage">
+	<div class="row">
+		<div class="full-width bg-transparent">
+        <h1 class="text-center color">Please Select A XML File to process</h1>
+        <form action="file/upload" method="post" enctype="multipart/form-data" style="text-align: center;">
+          <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-xs-12">
+                <div class="full-width">
+                  <input type="file" name="avatar" id="base-input" class="form-control form-input form-style-base">
+                  <input type="text" id="fake-input" class="form-control form-input form-style-fake" placeholder="Choose your File" readonly>
+                  <span class="glyphicon glyphicon-open input-place"></span>
+                </div>
+          </div>
+          <div class="col-lg-12 col-md-12 text-center">
+              <button class="btn btn-info btn-lg custom-btn" id="submit" ><span class="glyphicon glyphicon-save"></span> Generate Health Cards</button>
+          </div>
+      </form>
+    </div>
+    </div>
 	</div>
+</div>
+
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </body>
 </html>
 
