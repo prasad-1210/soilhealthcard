@@ -7,7 +7,7 @@
 
 <body>
 	<%
-	for(var i=0; i < data.Tablix1.Details_Collection.Details.length - 1; i++) {
+	for(var i=0; i < data.Tablix1.Details_Collection.Details.length; i++) {
 
                 const Sample_No = data.Tablix1.Details_Collection.Details[i].Sample_No;
                 const Sample_Collection_Date = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Sample_Collection_Date;
@@ -63,7 +63,8 @@
 
 								}];
    %>
-	<div style="top: <%= i*792 %>px;left: 0px;" class="page">
+	<div style="top: <%= i*793 %>px;left: 0px;" class="page">
+	<span style="position: absolute;top: 0;right: 0;"><%= i %></span>
 
 				<!-- Section 2 -->
 		<input type="text" style="left: 150px;top: 325px;width: 173px;height: 16px;/* font-size:10px; */font-weight:bold;" class="sno field" value="<%= Sample_No %>">
