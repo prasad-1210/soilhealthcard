@@ -1,8 +1,8 @@
-@media print {
+/*@media print {
   div.page {
     background-image: none;
   }
-}
+}*/
 
 @media screen{
   div.page {
