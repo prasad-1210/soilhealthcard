@@ -1,6 +1,6 @@
 @media print {
   div.page {
-    background-image: url(../images/image.png);
+    background-image: none;
   }
 }
 
