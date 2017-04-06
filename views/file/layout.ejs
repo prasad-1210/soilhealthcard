@@ -8,6 +8,14 @@
 <body>
 	<%
 	for(var i=0; i < data.Tablix1.Details_Collection.Details.length; i++) {
+                console.log("latlng: ",data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Textbox64);
+                console.log("fets: ", data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4);
+                console.log("fets: ", data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb1_Fert1_Mod_dose);
+                console.log("fets: ", data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb1_Fert2_Mod_dose);
+                console.log("fets: ", data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb1_Fert3_Mod_dose);
+                console.log("fets: ", data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb2_Fert1_Mod_dose);
+                console.log("fets: ", data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb2_Fert2_Mod_dose);
+                console.log("fets: ", data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb2_Fert3_Mod_dose);
 
                 const Sample_No = data.Tablix1.Details_Collection.Details[i].Sample_No;
                 const Sample_Collection_Date = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Sample_Collection_Date;
@@ -41,25 +49,27 @@
 									 data.Tablix31.Details3_Collection.Details3[i].SHCSubReSoilTestResultBlk.Report.Tablix2.Details1_Collection.Details1[__i];
 								}
 
+
+                const ferts = data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4[0]  || data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4;
 								var fert_suggestions = [];
 								fert_suggestions = [{
-									Sno: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Textbox1,
-									CropNVarient: `${data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Crop_Name1}, ${data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Variety_Name}`,
-									Reference_Yield: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Reference_Yield,
-									Organic_Fertilizer_Name: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Organic_Fertilizer_Name,
-									Bio_Fertilizer_Name: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Bio_Fertilizer_Name,
-									Comb1_Fert1_name:data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb1_Fert1_name,
-									Comb1_Fert1: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb1_Fert1_Mod_dose.split(' ')[0],
-									Comb1_Fert2_name:data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb1_Fert2_name,
-									Comb1_Fert2: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb1_Fert2_Mod_dose.split(' ')[0],
-									Comb1_Fert3_name: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb1_Fert3_name,
-									Comb1_Fert3: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb1_Fert3_Mod_dose.split(' ')[0],
-									Comb2_Fert1_name: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb2_Fert2_name,
-									Comb2_Fert1: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb2_Fert2_Mod_dose.split(' ')[0],
-									Comb2_Fert2_name: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb2_Fert1_name,
-									Comb2_Fert2: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb2_Fert1_Mod_dose.split(' ')[0],
-									Comb2_Fert3_name: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb2_Fert3_name,
-									Comb2_Fert3: data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4.Comb2_Fert3_Mod_dose.split(' ')[0]
+									Sno: ferts.Textbox1,
+									CropNVarient: `${ferts.Crop_Name1}, ${ferts.Variety_Name}`,
+									Reference_Yield: ferts.Reference_Yield,
+									Organic_Fertilizer_Name: ferts.Organic_Fertilizer_Name,
+									Bio_Fertilizer_Name: ferts.Bio_Fertilizer_Name,
+									Comb1_Fert1_name:ferts.Comb1_Fert1_name,
+									Comb1_Fert1: ferts.Comb1_Fert1_Mod_dose.split(' ')[0],
+									Comb1_Fert2_name:ferts.Comb1_Fert2_name,
+									Comb1_Fert2: ferts.Comb1_Fert2_Mod_dose.split(' ')[0],
+									Comb1_Fert3_name: ferts.Comb1_Fert3_name,
+									Comb1_Fert3: ferts.Comb1_Fert3_Mod_dose.split(' ')[0],
+									Comb2_Fert1_name: ferts.Comb2_Fert2_name,
+									Comb2_Fert1: ferts.Comb2_Fert2_Mod_dose.split(' ')[0],
+									Comb2_Fert2_name: ferts.Comb2_Fert1_name,
+									Comb2_Fert2: ferts.Comb2_Fert1_Mod_dose.split(' ')[0],
+									Comb2_Fert3_name: ferts.Comb2_Fert3_name,
+									Comb2_Fert3: ferts.Comb2_Fert3_Mod_dose.split(' ')[0]
 
 								}];
    %>
