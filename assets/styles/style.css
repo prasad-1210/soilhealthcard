@@ -6,7 +6,7 @@
 
 @media screen{
   div.page {
-    background-image: url(../images/image11.png);
+    background-image: url(../images/image.png);
   }
 }
 
@@ -39,7 +39,7 @@ div.page {
     width: 1086px;
     -webkit-print-color-adjust: exact;
    	background-repeat:no-repeat;
-    border: 1px solid none;
+    border: 1px solid transparent;
 }
 
 .mypage .full-width{
