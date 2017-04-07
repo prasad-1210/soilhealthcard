@@ -3,16 +3,17 @@
 
 <head>
     <link rel="stylesheet" href="/styles/style.css" />
-    <script type="text/javascript">
+    
+</script>
+</head>
+
+<body onload="documentReady();">
+<script type="text/javascript">
     function documentReady() {
         var rect = document.getElementByClassNameByClassName("page").getBoundingClientRect();
         console.log("Div properties:",rect);
         
     }
-</script>
-</head>
-
-<body>
 	<%
 	for(var i=0; i < data.Tablix1.Details_Collection.Details.length; i++) {
                 console.log("latlng: ",data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Textbox64);
