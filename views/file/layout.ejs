@@ -10,8 +10,9 @@
 <body onload="documentReady();">
 <script type="text/javascript">
     function documentReady() {
-        var rect = document.getElementsByClassName("page").getBoundingClientRect();
-        console.log("Div properties:",rect);
+        var rect = document.getElementsByClassName("page");
+        var rect1=rect.getBoundingClientRect();
+        console.log("Div properties:",rect1);
         
     }
     </script>
