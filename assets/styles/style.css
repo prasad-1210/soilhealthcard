@@ -1,12 +1,12 @@
 @media print {
   div.page {
-    background-image: url(../images/image.png);
+    background-image: none;
   }
 }
 
 @media screen{
   div.page {
-    background-image: url(../images/image.png);
+    background-image: url(../images/image11.png);
   }
 }
 
@@ -32,13 +32,14 @@ p.field{
 
 
 div.page {
-    height: 794px;
+    height: 791px;
     position: absolute;
     outline: 0 none transparent;
     background-size: contain;
     width: 1086px;
     -webkit-print-color-adjust: exact;
    	background-repeat:no-repeat;
+    border: 1px solid none;
 }
 
 .mypage .full-width{
