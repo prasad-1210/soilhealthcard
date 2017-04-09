@@ -98,18 +98,18 @@
         <input type="text" style="left: 224px;top: 480px;width: 104px;height: 17px;" class="field geolng" value="<%= lng %>">
 
 		<!-- Section 3 -->
-		<input type="text" style="left: 36px;top: 616px;width: 20px;height: 16px;font-size:10px;" class="sno1 field" value="<%= Textbox2 %>">
-    <input type="text" style="left: 74px;top: 616px;width: 110px;height: 16px;font-size:10px;" class="Bhu field" value="<%= TestName %> ">
-    <textarea style="margin-top: 616px;background: transparent;border: none;resize: none;width: 70px;overflow: hidden;margin-left: 160px;position: absolute;font-size: 10px;height: 70px;"><%= Suggestion_Thro_Soil %></textarea>
-		<textarea style="margin-left: 253px;margin-top: 616px;width: 70px;height: 70px;font-size:10px;background: transparent;overflow: hidden;border: none;resize: none;position: absolute;" class="Pichikari field"><%= Suggestion_Thro_Leaf %></textarea>
+		<input type="text" style="left: 42px;top: 616px;width: 20px;height: 16px;font-size:10px;" class="sno1 field" value="<%= Textbox2 %>">
+    <input type="text" style="left: 78px;top: 616px;width: 110px;height: 16px;font-size:10px;" class="Bhu field" value="<%= TestName %> ">
+    <textarea style="margin-top: 616px;background: transparent;border: none;resize: none;width: 70px;overflow: hidden;margin-left: 164px;position: absolute;font-size: 10px;height: 70px;"><%= Suggestion_Thro_Soil %></textarea>
+		<textarea style="margin-left: 256px;margin-top: 616px;width: 70px;height: 70px;font-size:10px;background: transparent;overflow: hidden;border: none;resize: none;position: absolute;" class="Pichikari field"><%= Suggestion_Thro_Leaf %></textarea>
 		<!-- Section 4-->
-		<input type="text" style="left: 508px;top: 214px;width: 172px;height: 16px;font-weight: bold;" class="ssno field" value="<%= Sample_No%>">
+		<input type="text" style="left: 508px;top: 212px;width: 172px;height: 16px;font-weight: bold;" class="ssno field" value="<%= Sample_No%>">
 		<input type="text" style="left: 414px;top: 236px;width: 258px;height: 16px;font-weight: bold;" class="Farmer field" value="<%= Farmer_Name %>">
         <input type="text" style="left: 418px;top: 262px;width: 256px;height: 16px;font-weight: bold;" class="Father field" value="<%= Father_Name %>">
         <input type="text" style="left: 416px;top: 290px;width: 256px;height: 16px;" class="Village field" value="<%= Sub_District_Name %>">
         <input type="text" style="left: 416px;top: 316px;width: 256px;height: 16px;" class="Mandal field" value="<%=District_Name  %>">
         <input type="text" style="left: 416px;top: 340px;width: 256px;height: 16px;" class="District field" value="<%=Address %>">
-        <input type="text" style="left: 416px;top: 366px;width: 256px;height: 16px;" class="Pin field" value="<%= pincode %>">
+        <input type="text" style="left: 416px;top: 362px;width: 256px;height: 16px;" class="Pin field" value="<%= pincode %>">
         <input type="text" style="left: 438px;top: 388px;width: 240px;height: 16px;" class="Mobile field" value="<%= mobile %>">
         <input type="text" style="left: 438px;top: 414px;width: 240px;height: 16px;" class="Aadhar field" value="<%= Aadhaar_Number %>">
         <input type="text" style="left: 416px;top: 442px;width: 240px;height: 16px;" class="Validity field" value="<%= validity %>">
@@ -142,19 +142,19 @@
         <!-- Section 7 -->
 				<% for(let ___i=0; ___i<fert_suggestions.length; ___i++){ let suggestion = fert_suggestions[___i]; %>
 
-						<input type="text" style="left: 360px;top: <%= 548 + (___i*80) %>px;width: 23px;height: 16px;font-size:10px;" class="sno2 field" value="<%=  suggestion.Sno %>">
+						<input type="text" style="left: 364px;top: <%= 548 + (___i*80) %>px;width: 23px;height: 16px;font-size:10px;" class="sno2 field" value="<%=  suggestion.Sno %>">
 
-						<textarea rows="3" cols="10" class="field" style="margin-left: 390px;margin-top: <%= 548 + (___i*74) %>px;width: 76px;height: 66px;vertical-align: top;background: transparent;overflow: hidden;border: 0;font-size: 10px;resize: none;position: absolute;"><%=  suggestion.CropNVarient %></textarea>
-					   <textarea rows="3" cols="10" class="field" style="margin-left: 472px;margin-top: <%= 548 + (___i*74) %>px;width: 41px;height: 66px;background: transparent;overflow: hidden;display: inline;vertical-align: top;border: 0;resize: none;font-size: 10px;position: absolute;"><%=  suggestion.Reference_Yield %></textarea>
-					   <textarea rows="3" cols="10" class="field" style="margin-left: 530px;margin-top: <%= 548 + (___i*74) %>px;width: 52px;height: 66px;background: transparent;overflow: hidden;vertical-align: top;border: 0;resize: none;font-size: 10px;position: absolute;"><%=  suggestion.Organic_Fertilizer_Name %></textarea>
+						<textarea rows="3" cols="10" class="field" style="margin-left: 394px;margin-top: <%= 548 + (___i*74) %>px;width: 76px;height: 66px;vertical-align: top;background: transparent;overflow: hidden;border: 0;font-size: 10px;resize: none;position: absolute;"><%=  suggestion.CropNVarient %></textarea>
+					   <textarea rows="3" cols="10" class="field" style="margin-left: 476px;margin-top: <%= 548 + (___i*74) %>px;width: 41px;height: 66px;background: transparent;overflow: hidden;display: inline;vertical-align: top;border: 0;resize: none;font-size: 10px;position: absolute;"><%=  suggestion.Reference_Yield %></textarea>
+					   <textarea rows="3" cols="10" class="field" style="margin-left: 534px;margin-top: <%= 548 + (___i*74) %>px;width: 52px;height: 66px;background: transparent;overflow: hidden;vertical-align: top;border: 0;resize: none;font-size: 10px;position: absolute;"><%=  suggestion.Organic_Fertilizer_Name %></textarea>
 
-						<input type="text" style="left: 594px;top: <%= 544 + (___i*72) %>px;width: 181px;height: 16px;font-size:10px;" class="Urea1name field" value="<%=  suggestion.Comb1_Fert1_name %> ">
+						<input type="text" style="left: 598px;top: <%= 544 + (___i*72) %>px;width: 181px;height: 16px;font-size:10px;" class="Urea1name field" value="<%=  suggestion.Comb1_Fert1_name %> ">
 						<input type="text" style="left: 794px;top: <%= 544 + (___i*72) %>px;width: 48px;height: 16px;font-size:10px;" class="Urea1 field" value="<%=  suggestion.Comb1_Fert1 %>">
 
-						<input type="text" style="left: 594px;top: <%= 568 + (___i*72) %>px;width: 181px;height: 16px;font-size:10px;" class="Phosphate1name field" value="<%=  suggestion.Comb1_Fert2_name %>">
+						<input type="text" style="left: 598px;top: <%= 568 + (___i*72) %>px;width: 181px;height: 16px;font-size:10px;" class="Phosphate1name field" value="<%=  suggestion.Comb1_Fert2_name %>">
 						<input type="text" style="left: 794px;top: <%= 568 + (___i*72) %>px;width: 51px;height: 16px;font-size:10px;" class="Phosphate1 field" value="<%=  suggestion.Comb1_Fert2 %>">
 
-						<input type="text" style="left: 594px;top: <%= 594 + (___i*72) %>px;width: 181px;height: 16px;font-size:10px;" class="Chloride1name field" value="<%=  suggestion.Comb1_Fert3_name %>">
+						<input type="text" style="left: 598px;top: <%= 594 + (___i*72) %>px;width: 181px;height: 16px;font-size:10px;" class="Chloride1name field" value="<%=  suggestion.Comb1_Fert3_name %>">
 						<input type="text" style="left: 794px;top: <%= 594 + (___i*72) %>px;width: 51px;height: 16px;font-size:10px;" class="Chloride1 field" value="<%=  suggestion.Comb1_Fert3 %>">
 
 						<input type="text" style="left: 838px;top: <%= 544 + (___i*72) %>px;width: 181px;height: 16px;font-size:10px;" class="Urea12name field" value="వ<%=  suggestion.Comb2_Fert1_name %>">
