@@ -59,7 +59,11 @@
 								console.log('Test Reports: ',test_reports);
 
 
-                const ferts = [].concat(data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4);
+                const ferts = [].concat(
+                    data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection
+                      ? data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4
+                      : []
+                );
 								var fert_suggestions = [];
             		console.log('count: ', ferts.length, i);
 								for(let __i=0; __i<ferts.length;__i++){
