@@ -70,7 +70,7 @@
             		console.log('count: ', ferts.length, i);
 								for(let __i=0; __i<ferts.length;__i++){
                   fert_suggestions.push({
-                    Sno: ferts[__i].Textbox1|| ' ',
+                    Sno: ferts[__i].Textbox1||ferts[__i].Crop_Name.Textbox15 ||' ',
                     CropNVarient: `${ferts[__i].Crop_Name1}, ${ferts[__i].Variety_Name}`|| ' ',
                     Reference_Yield: ferts[__i].Reference_Yield|| ' ',
                     Organic_Fertilizer_Name: ferts[__i].Organic_Fertilizer_Name|| ' ',
