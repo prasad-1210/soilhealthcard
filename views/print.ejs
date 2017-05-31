@@ -62,7 +62,9 @@
                 const ferts = [].concat(
                     data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection
                       ? data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4
-                      : []
+                      : data.Tablix31.Details3_Collection.Details3[i].SubReport_Fruit_Fert
+                          ? data.Tablix31.Details3_Collection.Details3[i].SubReport_Fruit_Fert.Report.Tablix5.Crop_Name_Collection
+                          :[]
                 );
 								var fert_suggestions = [];
             		console.log('count: ', ferts.length, i);
