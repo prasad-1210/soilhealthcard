@@ -2,177 +2,256 @@
 <html>
 
 <head>
-    <title> Soil Health Card Printer </title>
-    <link rel="stylesheet" href="/styles/style.css" />
-</script>
+  <title> Soil Health Card Printer </title>
+  <link rel="stylesheet" href="/styles/style.css"/>
 </head>
 
 <body onload="documentReady();">
 <script type="text/javascript">
-    function documentReady() {
-         function offset(el) {
-              var rect = el.getBoundingClientRect(),
-              scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-              scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-              return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
-         }
+  function documentReady() {
+    function offset(el) {
+      var rect = el.getBoundingClientRect(),
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+    }
 
-      // example use
-      var div = document.querySelector('div');
-      var divOffset = offset(div);
-      console.log(divOffset.left, divOffset.top);
-          }
-    </script>
-	<%
-	for(var i=0; i < data.Tablix1.Details_Collection.Details.length; i++) {
-                const Sample_No = data.Tablix1.Details_Collection.Details[i].Sample_No || ' ';
-                const Sample_Collection_Date = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Sample_Collection_Date || ' ';
-                const SurveyNo = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.SurveyNo|| ' ';
-                const DragNO = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.DragNO|| ' ';
-                const Land_Area = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Land_Area|| ' ';
-                const Irrigation_Rainfed = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Irrigation_Rainfed|| ' ';
-                const lat = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Textbox64.split("లాంగిట్యూడ్")[0].replace("లాటిట్యూడ్","")|| ' ';
-                const lng = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Textbox64.split("లాంగిట్యూడ్")[1]|| ' ';
-                const Farmer_Name = data.Tablix1.Details_Collection.Details[i].Farmer_Name|| data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Farmer_Name1 || ' ';
-                const Father_Name = data.Tablix1.Details_Collection.Details[i].Father_Name|| ' ';
-                const Address = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Village_Name|| ' ';
-                const Sub_District_Name = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Sub_District_Name|| ' ';
-                const District_Name = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.District_Name|| ' ';
-                const mobile = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.mobile|| ' ';
-                const Aadhaar_Number = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Aadhaar_Number|| ' ';
-                const validity = data.Tablix1.Details_Collection.Details[i].Textbox111|| ' ';
-                const pincode = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Farmer_PinCode || ' ';
-                const nature_of_land = ' ';
+    // example use
+    var div = document.querySelector('div');
+    var divOffset = offset(div);
+    console.log(divOffset.left, divOffset.top);
+  }
+</script>
+<%
+for(var i = 0; i < data.Tablix1.Details_Collection.Details.length; i++) {
+  const Sample_No = data.Tablix1.Details_Collection.Details[i].Sample_No || ' ';
+  const Sample_Collection_Date = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Sample_Collection_Date || ' ';
+  const SurveyNo = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.SurveyNo || ' ';
+  const DragNO = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.DragNO || ' ';
+  const Land_Area = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Land_Area || ' ';
+  const Irrigation_Rainfed = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Irrigation_Rainfed || ' ';
+  const lat = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Textbox64.split("లాంగిట్యూడ్")[0].replace("లాటిట్యూడ్", "") || ' ';
+  const lng = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Textbox64.split("లాంగిట్యూడ్")[1] || ' ';
+  const Farmer_Name = data.Tablix1.Details_Collection.Details[i].Farmer_Name || data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Farmer_Name1 || ' ';
+  const Father_Name = data.Tablix1.Details_Collection.Details[i].Father_Name || ' ';
+  const Address = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Village_Name || ' ';
+  const Sub_District_Name = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Sub_District_Name || ' ';
+  const District_Name = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.District_Name || ' ';
+  const mobile = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.mobile || ' ';
+  const Aadhaar_Number = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Aadhaar_Number || ' ';
+  const validity = data.Tablix1.Details_Collection.Details[i].Textbox111 || ' ';
+  const pincode = data.Tablix31.Details3_Collection.Details3[i].FarmerSubBlk.Report.Tablix2.Details1_Collection.Details1.Farmer_PinCode || ' ';
+  const nature_of_land = ' ';
 
-								const {Textbox2, TestName, Suggestion_Thro_Soil, Suggestion_Thro_Leaf} =
-											!data.Tablix1.Details_Collection.Details[i].Subreport1569.Report.Tablix1.Details_Collection
-												? {Textbox2:' ',TestName:' ',Suggestion_Thro_Soil:' ',Suggestion_Thro_Leaf:' '}
-												: data.Tablix1.Details_Collection.Details[i].Subreport1569.Report.Tablix1.Details_Collection.Details[0] || data.Tablix1.Details_Collection.Details[i].Subreport1569.Report.Tablix1.Details_Collection.Details
-
-
-								const Lab_Name2 = data.Tablix31.Details3_Collection.Details3[i].Lab_Name2;
-								var test_reports = {};
-								for(var __i = 0; __i< data.Tablix31.Details3_Collection.Details3[i].SHCSubReSoilTestResultBlk.Report.Tablix2.Details1_Collection.Details1.length;__i++){
-								test_reports[data.Tablix31.Details3_Collection.Details3[i].SHCSubReSoilTestResultBlk.Report.Tablix2.Details1_Collection.Details1[__i].TestName2.trim()] =
-									 data.Tablix31.Details3_Collection.Details3[i].SHCSubReSoilTestResultBlk.Report.Tablix2.Details1_Collection.Details1[__i];
-								}
-								console.log('Test Reports: ',test_reports);
+  const { Textbox2, TestName, Suggestion_Thro_Soil, Suggestion_Thro_Leaf } =
+    !data.Tablix1.Details_Collection.Details[i].Subreport1569.Report.Tablix1.Details_Collection
+      ? { Textbox2: ' ', TestName: ' ', Suggestion_Thro_Soil: ' ', Suggestion_Thro_Leaf: ' ' }
+      : data.Tablix1.Details_Collection.Details[i].Subreport1569.Report.Tablix1.Details_Collection.Details[0] || data.Tablix1.Details_Collection.Details[i].Subreport1569.Report.Tablix1.Details_Collection.Details
 
 
-                const ferts = [].concat(
-                    data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection
-                      ? data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4
-                      : data.Tablix31.Details3_Collection.Details3[i].SubReport_Fruit_Fert
-                          ? data.Tablix31.Details3_Collection.Details3[i].SubReport_Fruit_Fert.Report.Tablix5.Crop_Name_Collection
-                          :[]
-                );
-								var fert_suggestions = [];
-            		console.log('count: ', ferts.length, i);
-								for(let __i=0; __i<ferts.length;__i++){
-                  fert_suggestions.push({
-                    Sno: ferts[__i].Textbox1||ferts[__i].Crop_Name.Textbox15 ||' ',
-                    CropNVarient: `${ferts[__i].Crop_Name1}, ${ferts[__i].Variety_Name}`|| ' ',
-                    Reference_Yield: ferts[__i].Reference_Yield|| ' ',
-                    Organic_Fertilizer_Name: ferts[__i].Organic_Fertilizer_Name|| ' ',
-                    Bio_Fertilizer_Name: ferts[__i].Bio_Fertilizer_Name|| ' ',
-                    Comb1_Fert1_name:ferts[__i].Comb1_Fert1_name|| ' ',
-                    Comb1_Fert1: ferts[__i].Comb1_Fert1_Mod_dose.split(' ')[0]|| ' ',
-                    Comb1_Fert2_name:ferts[__i].Comb1_Fert2_name|| ' ',
-                    Comb1_Fert2: ferts[__i].Comb1_Fert2_Mod_dose.split(' ')[0]|| ' ',
-                    Comb1_Fert3_name: ferts[__i].Comb1_Fert3_name|| ' ',
-                    Comb1_Fert3: ferts[__i].Comb1_Fert3_Mod_dose.split(' ')[0]|| ' ',
-                    Comb2_Fert1_name: ferts[__i].Comb2_Fert2_name|| ' ',
-                    Comb2_Fert1: ferts[__i].Comb2_Fert2_Mod_dose.split(' ')[0]|| ' ',
-                    Comb2_Fert2_name: ferts[__i].Comb2_Fert1_name|| ' ',
-                    Comb2_Fert2: ferts[__i].Comb2_Fert1_Mod_dose.split(' ')[0]|| ' ',
-                    Comb2_Fert3_name: ferts[__i].Comb2_Fert3_name|| ' ',
-                    Comb2_Fert3: ferts[__i].Comb2_Fert3_Mod_dose.split(' ')[0]|| ' '
-                  });
-								}
-   %>
-	<div style="top: <%= i*792 %>px;left: 0px;" class="page">
-	<!-- span style="position: absolute;top: 0;right: 0;"><%= i %></span -->
+  const Lab_Name2 = data.Tablix31.Details3_Collection.Details3[i].Lab_Name2;
+  var test_reports = {};
+  for (var __i = 0; __i < data.Tablix31.Details3_Collection.Details3[i].SHCSubReSoilTestResultBlk.Report.Tablix2.Details1_Collection.Details1.length; __i++) {
+    test_reports[data.Tablix31.Details3_Collection.Details3[i].SHCSubReSoilTestResultBlk.Report.Tablix2.Details1_Collection.Details1[__i].TestName2.trim()] =
+      data.Tablix31.Details3_Collection.Details3[i].SHCSubReSoilTestResultBlk.Report.Tablix2.Details1_Collection.Details1[__i];
+  }
+  console.log('Test Reports: ', test_reports);
 
-				<!-- Section 2 -->
-		<input type="text" style="left: 150px;top: 320px;width: 173px;height: 16px;font-weight:bold;" class="sno field" value="<%= Sample_No %>">
-        <input type="text" style="left: 166px;top: 344px;width: 169px;height: 16px;" class="sampledate field" value="<%= Sample_Collection_Date %>">
-        <input type="text" style="left: 150px;top: 368px;width: 243px;height: 17px;" class="field surveyno" value="<%= SurveyNo %>">
-        <input type="text" style="left: 150px;top: 390px;width: 175px;height: 16px;" class="field khaprano" value="<%= DragNO %>">
-        <input type="text" style="left: 150px;top: 416px;width: 216px;height: 16px;" class="field dogno" value="<%= Land_Area %>">
-        <input type="text" style="left: 150px;top: 438px;width: 217px;height: 16px;" class="field irri" value="<%= Irrigation_Rainfed %>">
-        <input type="text" style="left: 224px;top: 456px;width: 104px;height: 16px;" class="field geolat" value="<%= lat %>">
-        <input type="text" style="left: 224px;top: 480px;width: 104px;height: 17px;" class="field geolng" value="<%= lng %>">
 
-		<!-- Section 3 -->
-		<input type="text" style="left: 42px;top: 616px;width: 20px;height: 16px;font-size:10px;" class="sno1 field" value="<%= Textbox2 %>">
-    <input type="text" style="left: 78px;top: 616px;width: 110px;height: 16px;font-size:10px;" class="Bhu field" value="<%= TestName %> ">
-    <textarea style="margin-top: 616px;background: transparent;border: none;resize: none;width: 70px;overflow: hidden;margin-left: 164px;position: absolute;font-size: 10px;height: 70px;"><%= Suggestion_Thro_Soil %></textarea>
-		<textarea style="margin-left: 256px;margin-top: 616px;width: 70px;height: 70px;font-size:10px;background: transparent;overflow: hidden;border: none;resize: none;position: absolute;" class="Pichikari field"><%= Suggestion_Thro_Leaf %></textarea>
-		<!-- Section 4-->
-		<input type="text" style="left: 508px;top: 212px;width: 172px;height: 16px;font-weight: bold;" class="ssno field" value="<%= Sample_No%>">
-		<input type="text" style="left: 414px;top: 236px;width: 258px;height: 16px;font-weight: bold;" class="Farmer field" value="<%= Farmer_Name %>">
-        <input type="text" style="left: 418px;top: 262px;width: 256px;height: 16px;font-weight: bold;" class="Father field" value="<%= Father_Name %>">
-        <input type="text" style="left: 416px;top: 290px;width: 256px;height: 16px;" class="Village field" value="<%= Sub_District_Name %>">
-        <input type="text" style="left: 416px;top: 316px;width: 256px;height: 16px;" class="Mandal field" value="<%=District_Name  %>">
-        <input type="text" style="left: 416px;top: 340px;width: 256px;height: 16px;" class="District field" value="<%=Address %>">
-        <input type="text" style="left: 416px;top: 362px;width: 256px;height: 16px;" class="Pin field" value="<%= pincode %>">
-        <input type="text" style="left: 438px;top: 388px;width: 240px;height: 16px;" class="Mobile field" value="<%= mobile %>">
-        <input type="text" style="left: 438px;top: 414px;width: 240px;height: 16px;" class="Aadhar field" value="<%= Aadhaar_Number %>">
-        <input type="text" style="left: 416px;top: 442px;width: 240px;height: 16px;" class="Validity field" value="<%= validity %>">
-				<!-- Section 6 -->
-				<input type="text" value="<%= Lab_Name2 %>" style="left: 716px;top: 208px;width: 359px;height: 16px;font-size:12px; font-weight: bold;" class="labName field" />
-        <input type="text" value="<%= test_reports['ఉదజని సూచిక']?test_reports['ఉదజని సూచిక'].TestValue1 || ' ':' ' %>" placeholder="PH" style="left: 840px;top: 254px;width: 54px;height: 16px;font-size:10px;" class="PH field">
-        <input type="text" value="<%= test_reports['ఉదజని సూచిక']?test_reports['ఉదజని సూచిక'].Rating || ' ':' ' %>" placeholder="PH Rating" style="left: 955px;top: 256px;width: 68px;height: 16px;font-size: 10px;" class="PHRating field">
-        <input type="text" value="<%= test_reports['లవణ సూచిక']?test_reports['లవణ సూచిక'].TestValue1 || ' ':' ' %>" placeholder="EC" style="left: 840px;top: 272px;width: 54px;height: 16px;font-size:10px;" class="EC field">
-        <input type="text" value="<%= test_reports['లవణ సూచిక']?test_reports['లవణ సూచిక'].Rating || ' ':' ' %>" placeholder="EC Rating" style="left: 955px;top: 274px;width: 68px;height: 16px;font-size:10px;" class="ECRating field">
-        <input type="text" value="<%= test_reports['సేంద్రియ కర్బనం']?test_reports['సేంద్రియ కర్బనం'].TestValue1 || ' ':' ' %>" placeholder="OC" style="left: 840px;top: 286px;width: 54px;height: 16px;font-size:10px;" class="OC field">
-        <input type="text" value="<%= test_reports['సేంద్రియ కర్బనం']?test_reports['సేంద్రియ కర్బనం'].Rating || ' ':' ' %>" placeholder="OC Rating" style="left: 955px;top: 288px;width: 68px;height: 16px;font-size:10px;" class="OCRating field">
-        <input type="text" value="<%= test_reports['లభ్య  నత్రజని']?test_reports['లభ్య  నత్రజని'].TestValue1 || ' ':' ' %>" placeholder="N" style="left: 840px;top: 303px;width: 54px;height: 16px;font-size:10px;" class="N field">
-        <input type="text" value="<%= test_reports['లభ్య  నత్రజని']?test_reports['లభ్య  నత్రజని'].Rating || ' ':' ' %>" placeholder="N Rating" style="left: 955px;top: 305px;width: 68px;height: 16px;font-size:10px;" class="NRating field">
-        <input type="text" value="<%= test_reports['లభ్య  భాస్వరం']?test_reports['లభ్య  భాస్వరం'].TestValue1 || ' ':' ' %>" placeholder="P" style="left: 840px;top: 321px;width: 54px;height: 16px;font-size:10px;" class="P field">
-        <input type="text" value="<%= test_reports['లభ్య  భాస్వరం']?test_reports['లభ్య  భాస్వరం'].Rating || ' ':' ' %>" placeholder="P Rating" style="left: 955px;top: 321px;width: 68px;height: 16px;font-size:10px;" class="PRating field">
-        <input type="text" value="<%= test_reports['లభ్య  పొటాషియం']?test_reports['లభ్య  పొటాషియం'].TestValue1 || ' ':' ' %>" placeholder="K" style="left: 840px;top: 336px;width: 54px;height: 16px;font-size:10px;" class="K field">
-        <input type="text" value="<%= test_reports['లభ్య  పొటాషియం']?test_reports['లభ్య  పొటాషియం'].Rating || ' ':' ' %>" placeholder="K Rating" style="left: 955px;top: 337px;width: 68px;height: 16px;font-size:10px;" class="KRating field">
-        <input type="text" value="<%= test_reports['లభ్య  గంధకము']?test_reports['లభ్య  గంధకము'].TestValue1 || ' ':' ' %>" placeholder="S" style="left: 840px;top: 352px;width: 54px;height: 16px;font-size:10px;"	 class="S field">
-        <input type="text" value="<%= test_reports['లభ్య  గంధకము']?test_reports['లభ్య  గంధకము'].Rating || ' ':' ' %>" placeholder="S Rating" style="left: 955px;top: 354px;width: 68px;height: 16px;font-size:10px;" class="SRating field">
-        <input type="text" value="<%= test_reports['లభ్య  జింకు']?test_reports['లభ్య  జింకు'].TestValue1 || ' ':' ' %>" placeholder="ZN" style="left: 840px;top: 371px;width: 54px;height: 16px;font-size:10px;" class="ZN field">
-        <input type="text" value="<%= test_reports['లభ్య  జింకు']?test_reports['లభ్య  జింకు'].Rating || ' ':' ' %>" placeholder="ZN Rating" style="left: 955px;top: 371px;width: 68px;height: 16px;font-size:10px;" class="ZNRating field">
-        <input type="text" value="<%= test_reports['లభ్య  బోరాన్']?test_reports['లభ్య  బోరాన్'].TestValue1 || ' ':' ' %>" placeholder="B" style="left: 840px;top: 389px;width: 54px;height: 16px;font-size:10px;" class="B field">
-        <input type="text" value="<%= test_reports['లభ్య  బోరాన్']?test_reports['లభ్య  బోరాన్'].Rating || ' ':' ' %>" placeholder="B Rating" style="left: 955px;top: 390px;width: 68px;height: 16px;font-size:10px;" class="BRating field">
-        <input type="text" value="<%= test_reports['లభ్య  ఇనుము']?test_reports['లభ్య  ఇనుము'].TestValue1 || ' ':' ' %>" placeholder="FE" style="left: 840px;top: 405px;width: 54px;height: 16px;font-size:10px;"  class="FE field">
-        <input type="text" value="<%= test_reports['లభ్య  ఇనుము']?test_reports['లభ్య  ఇనుము'].Rating || ' ':' ' %>" placeholder="FE Rating" style="left: 955px;top: 406px;width: 68px;height: 16px;font-size:10px;" class="FERating field">
-        <input type="text" value="<%= test_reports['లభ్య  మాంగనీసు']?test_reports['లభ్య  మాంగనీసు'].TestValue1 || ' ':' ' %>" placeholder="MN" style="left: 840px;top: 424px;width: 54px;height: 16px;font-size:10px;" class="MN field">
-        <input type="text" value="<%= test_reports['లభ్య  మాంగనీసు']?test_reports['లభ్య  మాంగనీసు'].Rating || ' ':' ' %>" placeholder="MN Rating" style="left: 955px;top: 424px;width: 68px;height: 16px;font-size:10px;" class="MNRating field">
-        <input type="text" value="<%= test_reports['లభ్య  రాగి']?test_reports['లభ్య  రాగి'].TestValue1 || ' ':' ' %>" placeholder="CU" style="left: 840px;top: 442px;width: 54px;height: 16px;font-size:10px;" class="CU field">
-        <input type="text" value="<%= test_reports['లభ్య  రాగి']?test_reports['లభ్య  రాగి'].Rating || ' ':' ' %>" placeholder="CU Rating" style="left: 955px;top: 442px;width: 68px;height: 16px;font-size:10px;" class="CURating field">
-        <!-- Section 7 -->
-				<% for(let ___i=0; ___i<fert_suggestions.length && ___i < 3; ___i++){ let suggestion = fert_suggestions[___i]; %>
+  const ferts = [].concat(
+    data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection
+      ? data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4
+      : data.Tablix31.Details3_Collection.Details3[i].SubReport_Fruit_Fert
+      ? data.Tablix31.Details3_Collection.Details3[i].SubReport_Fruit_Fert.Report.Tablix5.Crop_Name_Collection.Crop_Name
+      : []
+  );
+  var fert_suggestions = [];
+  console.log('count: ', ferts.length);
+  for (let __i = 0; __i < ferts.length; __i++) {
+    fert_suggestions.push({
+      Sno: ferts[__i].Textbox1 || ferts[__i].Textbox15 || ' ',
+      CropNVarient: `${ferts[__i].Crop_Name1 || ferts[__i].Crop_Name2.Crop_Name2 || ''}\n ${ferts[__i].Variety_Name || ''}` || ' ',
+      Reference_Yield: (ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Reference_Yield || ' ',
+      Organic_Fertilizer_Name: (ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Organic_Fertilizer_Name || ' ',
+      Bio_Fertilizer_Name: (ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Bio_Fertilizer_Name || ' ',
+      Comb1_Fert1_name: (ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Comb1_Fert1_name || ' ',
+      Comb1_Fert1: ((ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Comb1_Fert1_Mod_dose || "" ).split(' ')[0] || ' ',
+      Comb1_Fert2_name: (ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Comb1_Fert2_name || ' ',
+      Comb1_Fert2: ((ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Comb1_Fert2_Mod_dose || "" ).split(' ')[0] || ' ',
+      Comb1_Fert3_name: (ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Comb1_Fert3_name || ' ',
+      Comb1_Fert3: ((ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Comb1_Fert3_Mod_dose || "").split(' ')[0] || ' ',
+      Comb2_Fert1_name: (ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Comb2_Fert2_name || ' ',
+      Comb2_Fert1: ((ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Comb2_Fert2_Mod_dose || "").split(' ')[0] || ' ',
+      Comb2_Fert2_name: (ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Comb2_Fert1_name || ' ',
+      Comb2_Fert2: ((ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Comb2_Fert1_Mod_dose || "").split(' ')[0] || ' ',
+      Comb2_Fert3_name: (ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Comb2_Fert3_name || ' ',
+      Comb2_Fert3: ((ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Comb2_Fert3_Mod_dose || "").split(' ')[0] || ' '
+    });
+  }
+%>
+<div style="top: <%= i * 792 %>px;left: 0px;" class="page">
+  <!-- span style="position: absolute;top: 0;right: 0;"><%= i %></span -->
 
-						<input type="text" style="left: 364px;top: <%= 548 + (___i*80) %>px;width: 23px;height: 16px;font-size:10px;" class="sno2 field" value="<%=  suggestion.Sno %>">
+  <!-- Section 2 -->
+  <input type="text" style="left: 150px;top: 320px;width: 173px;height: 16px;font-weight:bold;" class="sno field"
+         value="<%= Sample_No %>">
+  <input type="text" style="left: 166px;top: 344px;width: 169px;height: 16px;" class="sampledate field"
+         value="<%= Sample_Collection_Date %>">
+  <input type="text" style="left: 150px;top: 368px;width: 243px;height: 17px;" class="field surveyno"
+         value="<%= SurveyNo %>">
+  <input type="text" style="left: 150px;top: 390px;width: 175px;height: 16px;" class="field khaprano"
+         value="<%= DragNO %>">
+  <input type="text" style="left: 150px;top: 416px;width: 216px;height: 16px;" class="field dogno"
+         value="<%= Land_Area %>">
+  <input type="text" style="left: 150px;top: 438px;width: 217px;height: 16px;" class="field irri"
+         value="<%= Irrigation_Rainfed %>">
+  <input type="text" style="left: 224px;top: 456px;width: 104px;height: 16px;" class="field geolat" value="<%= lat %>">
+  <input type="text" style="left: 224px;top: 480px;width: 104px;height: 17px;" class="field geolng" value="<%= lng %>">
 
-						<textarea rows="3" cols="10" class="field" style="margin-left: 394px;margin-top: <%= 548 + (___i*74) %>px;width: 76px;height: 66px;vertical-align: top;background: transparent;overflow: hidden;border: 0;font-size: 10px;resize: none;position: absolute;"><%=  suggestion.CropNVarient %></textarea>
-					   <textarea rows="3" cols="10" class="field" style="margin-left: 476px;margin-top: <%= 548 + (___i*74) %>px;width: 41px;height: 66px;background: transparent;overflow: hidden;display: inline;vertical-align: top;border: 0;resize: none;font-size: 10px;position: absolute;"><%=  suggestion.Reference_Yield %></textarea>
-					   <textarea rows="3" cols="10" class="field" style="margin-left: 534px;margin-top: <%= 548 + (___i*74) %>px;width: 52px;height: 66px;background: transparent;overflow: hidden;vertical-align: top;border: 0;resize: none;font-size: 10px;position: absolute;"><%=  suggestion.Organic_Fertilizer_Name %></textarea>
+  <!-- Section 3 -->
+  <input type="text" style="left: 42px;top: 616px;width: 20px;height: 16px;font-size:10px;" class="sno1 field"
+         value="<%= Textbox2 %>">
+  <input type="text" style="left: 78px;top: 616px;width: 110px;height: 16px;font-size:10px;" class="Bhu field"
+         value="<%= TestName %> ">
+  <textarea
+    style="margin-top: 616px;background: transparent;border: none;resize: none;width: 70px;overflow: hidden;margin-left: 164px;position: absolute;font-size: 10px;height: 70px;"><%= Suggestion_Thro_Soil %></textarea>
+  <textarea
+    style="margin-left: 256px;margin-top: 616px;width: 70px;height: 70px;font-size:10px;background: transparent;overflow: hidden;border: none;resize: none;position: absolute;"
+    class="Pichikari field"><%= Suggestion_Thro_Leaf %></textarea>
+  <!-- Section 4-->
+  <input type="text" style="left: 508px;top: 212px;width: 172px;height: 16px;font-weight: bold;" class="ssno field"
+         value="<%= Sample_No %>">
+  <input type="text" style="left: 414px;top: 236px;width: 258px;height: 16px;font-weight: bold;" class="Farmer field"
+         value="<%= Farmer_Name %>">
+  <input type="text" style="left: 418px;top: 262px;width: 256px;height: 16px;font-weight: bold;" class="Father field"
+         value="<%= Father_Name %>">
+  <input type="text" style="left: 416px;top: 290px;width: 256px;height: 16px;" class="Village field"
+         value="<%= Sub_District_Name %>">
+  <input type="text" style="left: 416px;top: 316px;width: 256px;height: 16px;" class="Mandal field"
+         value="<%= District_Name %>">
+  <input type="text" style="left: 416px;top: 340px;width: 256px;height: 16px;" class="District field"
+         value="<%= Address %>">
+  <input type="text" style="left: 416px;top: 362px;width: 256px;height: 16px;" class="Pin field" value="<%= pincode %>">
+  <input type="text" style="left: 438px;top: 388px;width: 240px;height: 16px;" class="Mobile field"
+         value="<%= mobile %>">
+  <input type="text" style="left: 438px;top: 414px;width: 240px;height: 16px;" class="Aadhar field"
+         value="<%= Aadhaar_Number %>">
+  <input type="text" style="left: 416px;top: 442px;width: 240px;height: 16px;" class="Validity field"
+         value="<%= validity %>">
+  <!-- Section 6 -->
+  <input type="text" value="<%= Lab_Name2 %>"
+         style="left: 716px;top: 208px;width: 359px;height: 16px;font-size:12px; font-weight: bold;"
+         class="labName field"/>
+  <input type="text" value="<%= test_reports['ఉదజని సూచిక'] ? test_reports['ఉదజని సూచిక'].TestValue1 || ' ' : ' ' %>"
+         placeholder="PH" style="left: 840px;top: 254px;width: 54px;height: 16px;font-size:10px;" class="PH field">
+  <input type="text" value="<%= test_reports['ఉదజని సూచిక'] ? test_reports['ఉదజని సూచిక'].Rating || ' ' : ' ' %>"
+         placeholder="PH Rating" style="left: 955px;top: 256px;width: 68px;height: 16px;font-size: 10px;"
+         class="PHRating field">
+  <input type="text" value="<%= test_reports['లవణ సూచిక'] ? test_reports['లవణ సూచిక'].TestValue1 || ' ' : ' ' %>"
+         placeholder="EC" style="left: 840px;top: 272px;width: 54px;height: 16px;font-size:10px;" class="EC field">
+  <input type="text" value="<%= test_reports['లవణ సూచిక'] ? test_reports['లవణ సూచిక'].Rating || ' ' : ' ' %>"
+         placeholder="EC Rating" style="left: 955px;top: 274px;width: 68px;height: 16px;font-size:10px;"
+         class="ECRating field">
+  <input type="text"
+         value="<%= test_reports['సేంద్రియ కర్బనం'] ? test_reports['సేంద్రియ కర్బనం'].TestValue1 || ' ' : ' ' %>"
+         placeholder="OC" style="left: 840px;top: 286px;width: 54px;height: 16px;font-size:10px;" class="OC field">
+  <input type="text"
+         value="<%= test_reports['సేంద్రియ కర్బనం'] ? test_reports['సేంద్రియ కర్బనం'].Rating || ' ' : ' ' %>"
+         placeholder="OC Rating" style="left: 955px;top: 288px;width: 68px;height: 16px;font-size:10px;"
+         class="OCRating field">
+  <input type="text"
+         value="<%= test_reports['లభ్య  నత్రజని'] ? test_reports['లభ్య  నత్రజని'].TestValue1 || ' ' : ' ' %>"
+         placeholder="N" style="left: 840px;top: 303px;width: 54px;height: 16px;font-size:10px;" class="N field">
+  <input type="text" value="<%= test_reports['లభ్య  నత్రజని'] ? test_reports['లభ్య  నత్రజని'].Rating || ' ' : ' ' %>"
+         placeholder="N Rating" style="left: 955px;top: 305px;width: 68px;height: 16px;font-size:10px;"
+         class="NRating field">
+  <input type="text"
+         value="<%= test_reports['లభ్య  భాస్వరం'] ? test_reports['లభ్య  భాస్వరం'].TestValue1 || ' ' : ' ' %>"
+         placeholder="P" style="left: 840px;top: 321px;width: 54px;height: 16px;font-size:10px;" class="P field">
+  <input type="text" value="<%= test_reports['లభ్య  భాస్వరం'] ? test_reports['లభ్య  భాస్వరం'].Rating || ' ' : ' ' %>"
+         placeholder="P Rating" style="left: 955px;top: 321px;width: 68px;height: 16px;font-size:10px;"
+         class="PRating field">
+  <input type="text"
+         value="<%= test_reports['లభ్య  పొటాషియం'] ? test_reports['లభ్య  పొటాషియం'].TestValue1 || ' ' : ' ' %>"
+         placeholder="K" style="left: 840px;top: 336px;width: 54px;height: 16px;font-size:10px;" class="K field">
+  <input type="text" value="<%= test_reports['లభ్య  పొటాషియం'] ? test_reports['లభ్య  పొటాషియం'].Rating || ' ' : ' ' %>"
+         placeholder="K Rating" style="left: 955px;top: 337px;width: 68px;height: 16px;font-size:10px;"
+         class="KRating field">
+  <input type="text" value="<%= test_reports['లభ్య  గంధకము'] ? test_reports['లభ్య  గంధకము'].TestValue1 || ' ' : ' ' %>"
+         placeholder="S" style="left: 840px;top: 352px;width: 54px;height: 16px;font-size:10px;" class="S field">
+  <input type="text" value="<%= test_reports['లభ్య  గంధకము'] ? test_reports['లభ్య  గంధకము'].Rating || ' ' : ' ' %>"
+         placeholder="S Rating" style="left: 955px;top: 354px;width: 68px;height: 16px;font-size:10px;"
+         class="SRating field">
+  <input type="text" value="<%= test_reports['లభ్య  జింకు'] ? test_reports['లభ్య  జింకు'].TestValue1 || ' ' : ' ' %>"
+         placeholder="ZN" style="left: 840px;top: 371px;width: 54px;height: 16px;font-size:10px;" class="ZN field">
+  <input type="text" value="<%= test_reports['లభ్య  జింకు'] ? test_reports['లభ్య  జింకు'].Rating || ' ' : ' ' %>"
+         placeholder="ZN Rating" style="left: 955px;top: 371px;width: 68px;height: 16px;font-size:10px;"
+         class="ZNRating field">
+  <input type="text" value="<%= test_reports['లభ్య  బోరాన్'] ? test_reports['లభ్య  బోరాన్'].TestValue1 || ' ' : ' ' %>"
+         placeholder="B" style="left: 840px;top: 389px;width: 54px;height: 16px;font-size:10px;" class="B field">
+  <input type="text" value="<%= test_reports['లభ్య  బోరాన్'] ? test_reports['లభ్య  బోరాన్'].Rating || ' ' : ' ' %>"
+         placeholder="B Rating" style="left: 955px;top: 390px;width: 68px;height: 16px;font-size:10px;"
+         class="BRating field">
+  <input type="text" value="<%= test_reports['లభ్య  ఇనుము'] ? test_reports['లభ్య  ఇనుము'].TestValue1 || ' ' : ' ' %>"
+         placeholder="FE" style="left: 840px;top: 405px;width: 54px;height: 16px;font-size:10px;" class="FE field">
+  <input type="text" value="<%= test_reports['లభ్య  ఇనుము'] ? test_reports['లభ్య  ఇనుము'].Rating || ' ' : ' ' %>"
+         placeholder="FE Rating" style="left: 955px;top: 406px;width: 68px;height: 16px;font-size:10px;"
+         class="FERating field">
+  <input type="text"
+         value="<%= test_reports['లభ్య  మాంగనీసు'] ? test_reports['లభ్య  మాంగనీసు'].TestValue1 || ' ' : ' ' %>"
+         placeholder="MN" style="left: 840px;top: 424px;width: 54px;height: 16px;font-size:10px;" class="MN field">
+  <input type="text" value="<%= test_reports['లభ్య  మాంగనీసు'] ? test_reports['లభ్య  మాంగనీసు'].Rating || ' ' : ' ' %>"
+         placeholder="MN Rating" style="left: 955px;top: 424px;width: 68px;height: 16px;font-size:10px;"
+         class="MNRating field">
+  <input type="text" value="<%= test_reports['లభ్య  రాగి'] ? test_reports['లభ్య  రాగి'].TestValue1 || ' ' : ' ' %>"
+         placeholder="CU" style="left: 840px;top: 442px;width: 54px;height: 16px;font-size:10px;" class="CU field">
+  <input type="text" value="<%= test_reports['లభ్య  రాగి'] ? test_reports['లభ్య  రాగి'].Rating || ' ' : ' ' %>"
+         placeholder="CU Rating" style="left: 955px;top: 442px;width: 68px;height: 16px;font-size:10px;"
+         class="CURating field">
+  <!-- Section 7 -->
+  <% for(let ___i = 0; ___i < fert_suggestions.length && ___i < 3; ___i++){ let suggestion = fert_suggestions[___i]; %>
 
-						<input type="text" style="left: 598px;top: <%= 544 + (___i*72) %>px;width: 181px;height: 16px;font-size:10px;" class="Urea1name field" value="<%=  suggestion.Comb1_Fert1_name %> ">
-						<input type="text" style="left: 794px;top: <%= 544 + (___i*72) %>px;width: 48px;height: 16px;font-size:10px;" class="Urea1 field" value="<%=  suggestion.Comb1_Fert1 %>">
+  <input type="text" style="left: 364px;top: <%= 548 + (___i * 80) %>px;width: 23px;height: 16px;font-size:10px;"
+         class="sno2 field" value="<%= suggestion.Sno %>">
 
-						<input type="text" style="left: 598px;top: <%= 568 + (___i*72) %>px;width: 181px;height: 16px;font-size:10px;" class="Phosphate1name field" value="<%=  suggestion.Comb1_Fert2_name %>">
-						<input type="text" style="left: 794px;top: <%= 568 + (___i*72) %>px;width: 51px;height: 16px;font-size:10px;" class="Phosphate1 field" value="<%=  suggestion.Comb1_Fert2 %>">
+  <textarea rows="3" cols="10" class="field"
+            style="margin-left: 394px;margin-top: <%= 548 + (___i * 74) %>px;width: 76px;height: 66px;vertical-align: top;background: transparent;overflow: hidden;border: 0;font-size: 10px;resize: none;position: absolute;"><%= suggestion.CropNVarient %></textarea>
+  <textarea rows="3" cols="10" class="field"
+            style="margin-left: 476px;margin-top: <%= 548 + (___i * 74) %>px;width: 41px;height: 66px;background: transparent;overflow: hidden;display: inline;vertical-align: top;border: 0;resize: none;font-size: 10px;position: absolute;"><%= suggestion.Reference_Yield %></textarea>
+  <textarea rows="3" cols="10" class="field"
+            style="margin-left: 534px;margin-top: <%= 548 + (___i * 74) %>px;width: 52px;height: 66px;background: transparent;overflow: hidden;vertical-align: top;border: 0;resize: none;font-size: 10px;position: absolute;"><%= suggestion.Organic_Fertilizer_Name %></textarea>
 
-						<input type="text" style="left: 598px;top: <%= 594 + (___i*72) %>px;width: 181px;height: 16px;font-size:10px;" class="Chloride1name field" value="<%=  suggestion.Comb1_Fert3_name %>">
-						<input type="text" style="left: 794px;top: <%= 594 + (___i*72) %>px;width: 51px;height: 16px;font-size:10px;" class="Chloride1 field" value="<%=  suggestion.Comb1_Fert3 %>">
+  <input type="text" style="left: 598px;top: <%= 544 + (___i * 72) %>px;width: 181px;height: 16px;font-size:10px;"
+         class="Urea1name field" value="<%= suggestion.Comb1_Fert1_name %> ">
+  <input type="text" style="left: 794px;top: <%= 544 + (___i * 72) %>px;width: 48px;height: 16px;font-size:10px;"
+         class="Urea1 field" value="<%= suggestion.Comb1_Fert1 %>">
 
-						<input type="text" style="left: 838px;top: <%= 544 + (___i*72) %>px;width: 181px;height: 16px;font-size:10px;" class="Urea12name field" value="వ<%=  suggestion.Comb2_Fert1_name %>">
-						<input type="text" style="left: 1040px;top: <%= 544 + (___i*72) %>px;width: 46px;height: 16px;font-size:10px;" class="Urea12 field" value="<%=  suggestion.Comb2_Fert1 %>">
+  <input type="text" style="left: 598px;top: <%= 568 + (___i * 72) %>px;width: 181px;height: 16px;font-size:10px;"
+         class="Phosphate1name field" value="<%= suggestion.Comb1_Fert2_name %>">
+  <input type="text" style="left: 794px;top: <%= 568 + (___i * 72) %>px;width: 51px;height: 16px;font-size:10px;"
+         class="Phosphate1 field" value="<%= suggestion.Comb1_Fert2 %>">
 
-						<input type="text" style="left: 838px;top: <%= 568 + (___i*72) %>px;width: 181px;height: 16px;font-size:10px;" class="Phosphate12name field" value="<%=  suggestion.Comb2_Fert2_name %>">
-						<input type="text" style="left: 1040px;top: <%= 568 + (___i*72) %>px;width: 51px;height: 16px;font-size:10px;" class="Phosphate12 field" value="<%=  suggestion.Comb2_Fert2 %>">
+  <input type="text" style="left: 598px;top: <%= 594 + (___i * 72) %>px;width: 181px;height: 16px;font-size:10px;"
+         class="Chloride1name field" value="<%= suggestion.Comb1_Fert3_name %>">
+  <input type="text" style="left: 794px;top: <%= 594 + (___i * 72) %>px;width: 51px;height: 16px;font-size:10px;"
+         class="Chloride1 field" value="<%= suggestion.Comb1_Fert3 %>">
 
-						<input type="text" style="left: 838px;top: <%= 594 + (___i*72) %>px;width: 181px;height: 16px;font-size:10px;" class="Chloride12 field" value="<%=  suggestion.Comb2_Fert3_name %>">
-						<input type="text" style="left: 1040px;top: <%= 594 + (___i*72) %>px;width: 51px;height: 16px;font-size:10px;" class="Chloride12 field" value="<%=  suggestion.Comb2_Fert3 %>">
-				<% } %>
-    </div>
-	<% } %>
+  <input type="text" style="left: 838px;top: <%= 544 + (___i * 72) %>px;width: 181px;height: 16px;font-size:10px;"
+         class="Urea12name field" value="వ<%= suggestion.Comb2_Fert1_name %>">
+  <input type="text" style="left: 1040px;top: <%= 544 + (___i * 72) %>px;width: 46px;height: 16px;font-size:10px;"
+         class="Urea12 field" value="<%= suggestion.Comb2_Fert1 %>">
+
+  <input type="text" style="left: 838px;top: <%= 568 + (___i * 72) %>px;width: 181px;height: 16px;font-size:10px;"
+         class="Phosphate12name field" value="<%= suggestion.Comb2_Fert2_name %>">
+  <input type="text" style="left: 1040px;top: <%= 568 + (___i * 72) %>px;width: 51px;height: 16px;font-size:10px;"
+         class="Phosphate12 field" value="<%= suggestion.Comb2_Fert2 %>">
+
+  <input type="text" style="left: 838px;top: <%= 594 + (___i * 72) %>px;width: 181px;height: 16px;font-size:10px;"
+         class="Chloride12 field" value="<%= suggestion.Comb2_Fert3_name %>">
+  <input type="text" style="left: 1040px;top: <%= 594 + (___i * 72) %>px;width: 51px;height: 16px;font-size:10px;"
+         class="Chloride12 field" value="<%= suggestion.Comb2_Fert3 %>">
+  <% } %>
+</div>
+<% } %>
 </body>
 </html>
