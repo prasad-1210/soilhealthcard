@@ -74,18 +74,18 @@ for(var i = 0; i < data.Tablix1.Details_Collection.Details.length; i++) {
       Reference_Yield: (ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Reference_Yield || ' ',
       Organic_Fertilizer_Name: (ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Organic_Fertilizer_Name || ' ',
       Bio_Fertilizer_Name: (ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Bio_Fertilizer_Name || ' ',
-      Comb1_Fert1_name: (ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Comb1_Fert1_name || ' ',
-      Comb1_Fert1: ((ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Comb1_Fert1_Mod_dose || "" ).split(' ')[0] || ' ',
-      Comb1_Fert2_name: (ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Comb1_Fert2_name || ' ',
-      Comb1_Fert2: ((ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Comb1_Fert2_Mod_dose || "" ).split(' ')[0] || ' ',
-      Comb1_Fert3_name: (ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Comb1_Fert3_name || ' ',
-      Comb1_Fert3: ((ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Comb1_Fert3_Mod_dose || "").split(' ')[0] || ' ',
-      Comb2_Fert1_name: (ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Comb2_Fert2_name || ' ',
-      Comb2_Fert1: ((ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Comb2_Fert2_Mod_dose || "").split(' ')[0] || ' ',
-      Comb2_Fert2_name: (ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Comb2_Fert1_name || ' ',
-      Comb2_Fert2: ((ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Comb2_Fert1_Mod_dose || "").split(' ')[0] || ' ',
-      Comb2_Fert3_name: (ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Comb2_Fert3_name || ' ',
-      Comb2_Fert3: ((ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Comb2_Fert3_Mod_dose || "").split(' ')[0] || ' '
+      Comb1_Fert1_name: ferts[__i].Comb1_Fert1_name || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb1_Fert1_name || ' ',
+      Comb1_Fert1: (ferts[__i].Comb1_Fert1_Mod_dose || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb1_Fert1_Mod_dose || "" ).split(' ')[0] || ' ',
+      Comb1_Fert2_name: ferts[__i].Comb1_Fert2_name || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb1_Fert2_name || ' ',
+      Comb1_Fert2: (ferts[__i].Comb1_Fert2_Mod_dose || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb1_Fert2_Mod_dose || "" ).split(' ')[0] || ' ',
+      Comb1_Fert3_name: ferts[__i].Comb1_Fert3_name || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb1_Fert3_name || ' ',
+      Comb1_Fert3: (ferts[__i].Comb1_Fert3_Mod_dose || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb1_Fert3_Mod_dose || "").split(' ')[0] || ' ',
+      Comb2_Fert1_name: ferts[__i].Comb2_Fert2_name || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb2_Fert2_name || ' ',
+      Comb2_Fert1: (ferts[__i].Comb2_Fert2_Mod_dose || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb2_Fert2_Mod_dose || "").split(' ')[0] || ' ',
+      Comb2_Fert2_name: ferts[__i].Comb2_Fert1_name || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb2_Fert1_name || ' ',
+      Comb2_Fert2: (ferts[__i].Comb2_Fert1_Mod_dose || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb2_Fert1_Mod_dose || "").split(' ')[0] || ' ',
+      Comb2_Fert3_name: ferts[__i].Comb2_Fert3_name || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb2_Fert3_name || ' ',
+      Comb2_Fert3: (ferts[__i].Comb2_Fert3_Mod_dose || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb2_Fert3_Mod_dose || "").split(' ')[0] || ' '
     });
   }
 %>
