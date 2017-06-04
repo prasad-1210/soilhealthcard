@@ -71,19 +71,19 @@ for(var i = 0; i < data.Tablix1.Details_Collection.Details.length; i++) {
     fert_suggestions.push({
       Sno: ferts[__i].Textbox1 || ferts[__i].Textbox15 || ' ',
       CropNVarient: `${ferts[__i].Crop_Name1 || ferts[__i].Crop_Name2.Crop_Name2 || ''}\n ${ferts[__i].Variety_Name || ''}` || ' ',
-      Reference_Yield: (ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Reference_Yield || ' ',
-      Organic_Fertilizer_Name: (ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Organic_Fertilizer_Name || ' ',
-      Bio_Fertilizer_Name: (ferts[__i] || (((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Bio_Fertilizer_Name || ' ',
+      Reference_Yield: (ferts[__i].Reference_Yield) || ((((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Reference_Yield || ' ',
+      Organic_Fertilizer_Name: (ferts[__i].Organic_Fertilizer_Name) || (((((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Organic_Fertilizer_Name ) || ' ',
+      Bio_Fertilizer_Name: (ferts[__i].Bio_Fertilizer_Name) || ((((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Bio_Fertilizer_Name || ' ',
       Comb1_Fert1_name: ferts[__i].Comb1_Fert1_name || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb1_Fert1_name || ' ',
       Comb1_Fert1: (ferts[__i].Comb1_Fert1_Mod_dose || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb1_Fert1_Mod_dose || "" ).split(' ')[0] || ' ',
       Comb1_Fert2_name: ferts[__i].Comb1_Fert2_name || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb1_Fert2_name || ' ',
       Comb1_Fert2: (ferts[__i].Comb1_Fert2_Mod_dose || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb1_Fert2_Mod_dose || "" ).split(' ')[0] || ' ',
       Comb1_Fert3_name: ferts[__i].Comb1_Fert3_name || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb1_Fert3_name || ' ',
       Comb1_Fert3: (ferts[__i].Comb1_Fert3_Mod_dose || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb1_Fert3_Mod_dose || "").split(' ')[0] || ' ',
-      Comb2_Fert1_name: ferts[__i].Comb2_Fert2_name || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb2_Fert2_name || ' ',
-      Comb2_Fert1: (ferts[__i].Comb2_Fert2_Mod_dose || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb2_Fert2_Mod_dose || "").split(' ')[0] || ' ',
-      Comb2_Fert2_name: ferts[__i].Comb2_Fert1_name || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb2_Fert1_name || ' ',
-      Comb2_Fert2: (ferts[__i].Comb2_Fert1_Mod_dose || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb2_Fert1_Mod_dose || "").split(' ')[0] || ' ',
+      Comb2_Fert1_name: ferts[__i].Comb2_Fert1_name || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb2_Fert1_name || ' ',
+      Comb2_Fert1: (ferts[__i].Comb2_Fert1_Mod_dose || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb2_Fert1_Mod_dose || "").split(' ')[0] || ' ',
+      Comb2_Fert2_name: ferts[__i].Comb2_Fert2_name || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb2_Fert2_name || ' ',
+      Comb2_Fert2: (ferts[__i].Comb2_Fert2_Mod_dose || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb2_Fert2_Mod_dose || "").split(' ')[0] || ' ',
       Comb2_Fert3_name: ferts[__i].Comb2_Fert3_name || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb2_Fert3_name || ' ',
       Comb2_Fert3: (ferts[__i].Comb2_Fert3_Mod_dose || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb2_Fert3_Mod_dose || "").split(' ')[0] || ' '
     });
@@ -218,7 +218,7 @@ for(var i = 0; i < data.Tablix1.Details_Collection.Details.length; i++) {
             style="margin-left: 394px;margin-top: <%= 548 + (___i * 74) %>px;width: 76px;height: 66px;vertical-align: top;background: transparent;overflow: hidden;border: 0;font-size: 10px;resize: none;position: absolute;"><%= suggestion.CropNVarient %></textarea>
   <textarea rows="3" cols="10" class="field"
             style="margin-left: 476px;margin-top: <%= 548 + (___i * 74) %>px;width: 41px;height: 66px;background: transparent;overflow: hidden;display: inline;vertical-align: top;border: 0;resize: none;font-size: 10px;position: absolute;"><%= suggestion.Reference_Yield %></textarea>
-  <textarea rows="3" cols="10" class="field"
+  <textarea rows="3" cols="10" class="field "
             style="margin-left: 534px;margin-top: <%= 548 + (___i * 74) %>px;width: 52px;height: 66px;background: transparent;overflow: hidden;vertical-align: top;border: 0;resize: none;font-size: 10px;position: absolute;"><%= suggestion.Organic_Fertilizer_Name %></textarea>
 
   <input type="text" style="left: 598px;top: <%= 544 + (___i * 72) %>px;width: 181px;height: 16px;font-size:10px;"
@@ -237,7 +237,7 @@ for(var i = 0; i < data.Tablix1.Details_Collection.Details.length; i++) {
          class="Chloride1 field" value="<%= suggestion.Comb1_Fert3 %>">
 
   <input type="text" style="left: 838px;top: <%= 544 + (___i * 72) %>px;width: 181px;height: 16px;font-size:10px;"
-         class="Urea12name field" value="వ<%= suggestion.Comb2_Fert1_name %>">
+         class="Urea12name field" value="<%= suggestion.Comb2_Fert1_name %>">
   <input type="text" style="left: 1040px;top: <%= 544 + (___i * 72) %>px;width: 46px;height: 16px;font-size:10px;"
          class="Urea12 field" value="<%= suggestion.Comb2_Fert1 %>">
 
