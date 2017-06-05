@@ -63,6 +63,7 @@ for(var i = 0; i < data.Tablix1.Details_Collection.Details.length; i++) {
       ? data.Tablix31.Details3_Collection.Details3[i].Subreport4.Report.Tablix5.Details4_Collection.Details4
       : data.Tablix31.Details3_Collection.Details3[i].SubReport_Fruit_Fert
       ? data.Tablix31.Details3_Collection.Details3[i].SubReport_Fruit_Fert.Report.Tablix5.Crop_Name_Collection.Crop_Name
+      ? data.Tablix31.Details3_Collection.Details3[i].SubReport_Fruit_Fert.Report.Tablix5.Textbox16.Textbox6
       : []
   );
   var fert_suggestions = [];
@@ -76,7 +77,7 @@ for(var i = 0; i < data.Tablix1.Details_Collection.Details.length; i++) {
       Bio_Fertilizer_Name: (ferts[__i].Bio_Fertilizer_Name) || ((((ferts[__i].Crop_Name2 || {}).Details4_Collection || {}).Details4 || {})).Bio_Fertilizer_Name || ' ',
       Comb1_Fert1_name: ferts[__i].Comb1_Fert1_name || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb1_Fert1_name || ' ',
       Comb1_Fert1: (ferts[__i].Comb1_Fert1_Mod_dose || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb1_Fert1_Mod_dose || "" ).split(' ')[0] || ' ',
-      Comb1_Fert2_name: ferts[__i].Comb1_Fert2_name || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb1_Fert2_name || ' ',
+      Comb1_Fert2_name: ferts[__i].Comb1_Fert2_name || (ferts[__i].Crop_Name2 || {}).Comb1_Fert2_name || ' ',
       Comb1_Fert2: (ferts[__i].Comb1_Fert2_Mod_dose || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb1_Fert2_Mod_dose || "" ).split(' ')[0] || ' ',
       Comb1_Fert3_name: ferts[__i].Comb1_Fert3_name || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb1_Fert3_name || ' ',
       Comb1_Fert3: (ferts[__i].Comb1_Fert3_Mod_dose || (ferts[__i].Crop_Name2 || {}).Details4_Collection.Details4.Comb1_Fert3_Mod_dose || "").split(' ')[0] || ' ',
